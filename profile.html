@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .info {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background: #56ab2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Patient Profile</h2>
+        <p class="info">Name: <span id="name"></span></p>
+        <p class="info">Age: <input type="number" id="age" placeholder="Enter age"></p>
+        <p class="info">Gender: <input type="text" id="gender" placeholder="Enter gender"></p>
+        <p class="info">Address: <input type="text" id="address" placeholder="Enter address"></p>
+        <p class="info">Contact No: <input type="tel" id="contact" placeholder="Enter contact number"></p>
+        <a href="#" id="symptoms-link">Proceed to Symptoms</a>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || "Guest";
+        document.getElementById('name').textContent = name;
+
+        document.getElementById('symptoms-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            if (age && gender && address && contact) {
+                window.location.href = `symptoms.html?name=${encodeURIComponent(name)}`;
+            } else {
+                alert("Please fill in all details.");
+            }
+        });
+    </script>
+</body>
+</html>

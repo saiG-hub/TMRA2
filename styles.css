@@ -1,0 +1,121 @@
+/* Resetting default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #007BFF, #28A745);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.logo img {
+    width: 120px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #28A745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007BFF, #28A745);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #28A745, #007BFF);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggle {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle:hover {
+    color: #28A745;
+    text-decoration: none;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 14px;
+    }
+}
